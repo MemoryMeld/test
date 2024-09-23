@@ -1,0 +1,3 @@
+ml64 /c syscalls.asm /Fo syscalls.obj
+
+cl.exe /nologo /Ox /GS- /Ob2 /Ot /Oy /GL /GR- /EHsc- .\main.cpp .\syscalls.obj /link /out:test.exe /NODEFAULTLIB ntdll.lib kernel32.lib /ENTRY:MyCustomEntryPoint /SUBSYSTEM:WINDOWS /MACHINE:x64 /DEBUG:NONE /MERGE:.pdata=.text /MERGE:.rdata=.text
